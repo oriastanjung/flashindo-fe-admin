@@ -9,7 +9,7 @@ import AccountIcon from "../../assets/icons/AccountSVG"
 
 function Sidebar() {
   return (
-    <aside className="bg-[#ffffff] border-e-[1px] border-greyPrimary w-[20%] pl-10 pt-6">
+    <aside className="bg-[#ffffff] border-e-[1px] border-greyPrimary xl:w-[20%] lg:w-[30%] pl-10 pt-6 h-[100vh] hidden lg:block">
       <NavTitle />
       <ul className={"mt-20 flex flex-col gap-10"}>
         <li>
