@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom"
+import ChevronRightSVG from "../../assets/icons/ChevronRightSVG"
 
 function Card(props) {
   return (
@@ -12,7 +14,8 @@ function Card(props) {
         </div>
         <div>
             <p className="font-bold text-2xl mt-4">{props.value}</p>
-            <p className="font-normal text-sm mt-4 text-bluePrimary">View More <span className="font-bold"> {">"} </span></p>
+            {/* <p className="font-normal text-sm mt-4 text-bluePrimary">View More <span className="font-bold"> {">"} </span></p> */}
+            <Link className="font-normal text-sm mt-4 text-bluePrimary flex items-center hover:underline" to={props.href}>View More <ChevronRightSVG isActive/></Link>
         </div>
     </div>
   )
