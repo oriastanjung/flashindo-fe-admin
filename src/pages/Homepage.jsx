@@ -5,6 +5,7 @@ import ItemsSVG from "../assets/icons/ItemsSVG";
 import UsersSVG from "../assets/icons/UsersSVG";
 import TransactionsSVG from "../assets/icons/TransactionsSVG";
 import CardTable from "../components/CardTable";
+import TableTransactionDashboard from "../components/TableTransactionsDashboard";
 
 function Homepage() {
   return (
@@ -24,7 +25,7 @@ function Homepage() {
         <div className="flex mt-10 flex-col gap-10 mb-10">
           <h2 className="text-2xl ">Latest Transactions</h2>
           <CardTable>
-            table disini
+            <TableTransactionDashboard />
           </CardTable>
         </div>
       </main>
