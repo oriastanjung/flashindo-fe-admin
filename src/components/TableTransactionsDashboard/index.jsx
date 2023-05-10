@@ -91,7 +91,11 @@ function TableTransactionDashboard() {
               return (
                 <tr key={i} className="text-left">
                   <td className="text-md text-center font-normal">{i + 1}</td>
-                  <td className="text-md text-center font-normal">{item.id_item.name}</td>
+                  <td className="text-md text-center font-normal">
+                    <img src="" alt="" />
+                    {item.id_item.name}
+                    
+                    </td>
                   <td className="text-md text-center font-normal">{item.total_price}</td>
                   <td className="text-md text-center font-normal">{item.id_user.username}</td>
                   <td className="text-md text-center font-normal">{item.id_user.email}</td>
