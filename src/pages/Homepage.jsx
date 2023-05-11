@@ -13,7 +13,7 @@ function Homepage() {
       <Sidebar />
       <main className="xl:w-[80%] w-[100%] h-[100vh] overflow-y-scroll   pt-6 px-10">
         <HeaderDashboard />
-        <div className="mt-10 flex gap-6">
+        <div className="mt-10 flex gap-6 flex-wrap justify-center">
           <Card title={"Items"} value={25} icon={<ItemsSVG isActive />} />
           <Card title={"Users"} value={70} icon={<UsersSVG isActive />} />
           <Card

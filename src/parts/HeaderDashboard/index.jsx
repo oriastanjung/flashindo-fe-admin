@@ -7,7 +7,7 @@ function HeaderDashboard() {
         <h2 className="font-extrabold text-2xl text-center">Welcome to Flashindo Dashboard</h2>
         <p className="font-regular text-xl text-center">Hello Huahong, welcome back!</p>
       </div>
-      <div>
+      <div className="hidden md:block">
         <NavUsers />
       </div>
     </div>
