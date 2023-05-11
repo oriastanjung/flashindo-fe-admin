@@ -1,3 +1,10 @@
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+
 function TableTransactionDashboard() {
   const data = [
     {
@@ -72,44 +79,86 @@ function TableTransactionDashboard() {
     },
   ];
   return (
-    <div>
-      <table className="table-auto w-[100%]">
-        <thead>
-          <tr className="" >
-            <th className="text-md font-normal">No</th>
-            <th className="text-md  font-normal">Item Details</th>
-            <th className="text-md font-normal">Total Price</th>
-            <th className="text-md font-normal">Username</th>
-            <th className="text-md font-normal">Email</th>
-            <th className="text-md font-normal">No Phone</th>
-            <th className="text-md font-normal">Status Payment</th>
-          </tr>
-        </thead>
-        <tbody>
+    <TableContainer>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell align={"center"} className="text-bold">
+              No
+            </TableCell>
+            <TableCell align={"center"} className="text-bold">
+              Item Details
+            </TableCell>
+            <TableCell align="center" className="text-bold">
+              Total Price
+            </TableCell>
+            <TableCell align="center" className="text-bold">
+              Username
+            </TableCell>
+            <TableCell align="center" className="text-bold">
+              Email
+            </TableCell>
+            <TableCell align="center" className="text-bold">
+              Phone
+            </TableCell>
+            <TableCell align="center" className="text-bold">
+              Status Payment
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {data &&
-            data.map((item, i) => {
-              return (
-                <tr key={i} className="text-left">
-                  <td className="text-md text-center font-normal">{i + 1}</td>
-                  <td className="text-md text-center font-normal">
-                    <img src="" alt="" />
-                    {item.id_item.name}
-                    
-                    </td>
-                  <td className="text-md text-center font-normal">{item.total_price}</td>
-                  <td className="text-md text-center font-normal">{item.id_user.username}</td>
-                  <td className="text-md text-center font-normal">{item.id_user.email}</td>
-                  <td className="text-md text-center font-normal">{item.id_user.no_telpon}</td>
-                  <td className="text-md text-center font-normal">{item.statusPayment}</td>
-                </tr>
-              );
-            })}
-          <tr className="flex justify-between">
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+            data.map((item, i) => (
+              <TableRow
+                key={i}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{i + 1}</TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2 w-100">
+                    <img
+                      src={`http://localhost:3287/uploads/${item.id_item.thumbnail}`}
+                      alt=""
+                      className="w-[60px] h-[60px] rounded-xl "
+                      style={{
+                        boxShadow: "-3px 4px 15px 2px rgba(81, 70, 159, 0.2)",
+                        border: "1px solid #D9D9D9",
+                      }}
+                    />
+                    <p>{item.id_item.name}</p>
+                  </div>
+                  {/* {item.id_item.name} */}
+                </TableCell>
+
+                <TableCell align="center">
+                  <p className="truncate text-ellipsis" style={{maxWidth : "6rem"}}>Rp{item.total_price}00000</p>
+                </TableCell>
+                <TableCell className="truncate text-ellipsis" align="center">
+                  {/* {item.id_user.username} */}
+                  <p className="truncate text-ellipsis" style={{maxWidth : "5rem"}}>
+                  ellipsisellipsisellipsisellipsisellipsisellipsis dakfjskafjkdsajfkjl
+                  </p>
+                </TableCell>
+                <TableCell align="center">{item.id_user.email}</TableCell>
+                <TableCell align="center">
+                  {item.id_user.no_telpon}
+                </TableCell>
+                <TableCell align="center">
+                  <p
+                    className={`capitalize ${
+                      item.statusPayment === "success"
+                        ? "text-success"
+                        : "text-danger"
+                    }`}
+                  >
+                    {item.statusPayment}
+                  </p>
+                </TableCell>
+              </TableRow>
+            ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }
 
