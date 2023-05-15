@@ -5,7 +5,7 @@ function ItemsSVG(props) {
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth="1.5"
+        strokeWidth={`${props.isActive ? "1.8" : "1.5"}`}
         stroke={props.isActive ? "#51469F" : "currentColor"}
         className="w-6 h-6"
       >

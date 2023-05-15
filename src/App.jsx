@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Homepage from "./pages/homepage";
 import Login from "./pages/login";
 import { ThemeProvider, createTheme } from "@mui/material";
+import Users from "./pages/Users";
 
 
 const customTheme = createTheme({
@@ -18,6 +19,7 @@ function App() {
   <ThemeProvider theme={customTheme}>
   <Routes>
     <Route path="/" element={<Homepage />}></Route>
+    <Route path="/users" element={<Users />}></Route>
     <Route path="/login" element={<Login />}></Route>
   </Routes>
   </ThemeProvider>);

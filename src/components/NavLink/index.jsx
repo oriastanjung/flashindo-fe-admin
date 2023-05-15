@@ -5,7 +5,7 @@ function NavLink(props) {
   return (
     <Link
       to={props.href}
-      className={`${props.isActive ? "text-bluePrimary" : ""} flex items-center gap-1 font-medium`}
+      className={`${props.isActive ? "text-bluePrimary font-bold" : "font-medium"} flex items-center gap-1 `}
     >
       {" "}
       {/* <img src={props.icon} alt="icon" /> {props.title} */}
