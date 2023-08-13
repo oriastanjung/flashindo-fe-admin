@@ -1,8 +1,8 @@
 import HeaderDashboard from "../parts/Homepage/HeaderDashboard";
 import Sidebar from "../components/Sidebar";
-import Main from "../parts/Users/Main";
+import Main from "../parts/Categories/Main";
 
-function Users() {
+function Categories() {
   
 
   return (
@@ -16,4 +16,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Categories;

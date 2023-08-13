@@ -1,8 +1,8 @@
 import HeaderDashboard from "../parts/Homepage/HeaderDashboard";
 import Sidebar from "../components/Sidebar";
-import Main from "../parts/Users/Main";
+import Main from "../parts/Products/Main";
 
-function Users() {
+function Products() {
   
 
   return (
@@ -16,4 +16,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Products;

@@ -1,4 +1,4 @@
-import HeaderDashboard from "../parts/HeaderDashboard";
+import HeaderDashboard from "../parts/Homepage/HeaderDashboard";
 import Sidebar from "../components/Sidebar";
 import Card from "../components/Card";
 import ItemsSVG from "../assets/icons/ItemsSVG";
@@ -6,15 +6,28 @@ import UsersSVG from "../assets/icons/UsersSVG";
 import TransactionsSVG from "../assets/icons/TransactionsSVG";
 import CardTable from "../components/CardTable";
 import TableTransactionDashboard from "../components/TableTransactionsDashboard";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
 
 function Homepage() {
+  const navigation = useNavigate();
+
+  const token = Cookies.get("token") ? JSON.parse(Cookies.get("token")) : "";
+  useEffect(() => {
+    if (!token) {
+      return navigation("/login");
+    } else {
+      return;
+    }
+  }, [token]);
   return (
     <section className="flex container mx-auto">
       <Sidebar />
-      <main className="xl:w-[80%] w-[100%] h-[100vh] overflow-y-scroll   pt-6 px-10">
+      <main className="xl:w-[80%] w-[100%] h-screen overflow-y-scroll   pt-6 px-10">
         <HeaderDashboard />
         <div className="mt-10 flex gap-6 flex-wrap justify-center">
-          <Card title={"Items"} value={25} icon={<ItemsSVG isActive />} />
+          <Card title={"Products"} value={25} icon={<ItemsSVG isActive />} />
           <Card title={"Users"} value={70} icon={<UsersSVG isActive />} />
           <Card
             title={"Benefit"}

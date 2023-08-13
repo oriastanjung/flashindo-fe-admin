@@ -6,7 +6,7 @@ function NavTitle() {
     navigate("/")
   }
   return (
-    <header className="flex gap-2.5 items-center cursor-pointer" onClick={handleGotoDashboard}>
+    <header className="flex px-6 gap-2.5 items-center cursor-pointer" onClick={handleGotoDashboard}>
         <img src={logoIMG} alt="logo" className="w-[30px]" />
         <h1 className="text-xl font-extrabold">Dashboard</h1>
     </header>
