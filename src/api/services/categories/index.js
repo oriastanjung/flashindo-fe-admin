@@ -1,5 +1,4 @@
 import api from "../..";
-import axios from "axios";
 import { ENDPOINT } from "../../index";
 
 const getAllCategories = async () => {
